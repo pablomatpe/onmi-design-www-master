@@ -1,0 +1,63 @@
+{
+  "name": "onmi-design-www",
+  "version": "0.0.1",
+  "private": true,
+  "license": "UNLICENSED",
+  "author": "Brad Adams <hi@breadadams.com> (https://breadadams.com/)",
+  "homepage": "https://www.onmidesign.es",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wombak/onmi-design-www.git"
+  },
+  "scripts": {
+    "fetch-data": "node ./scripts/index.js",
+    "start": "npm run fetch-data && next",
+    "start:prod": "npm run build && next start",
+    "build": "npm run fetch-data && next build",
+    "build:static": "npm run build && next export",
+    "format": "prettier --write .",
+    "lint": "eslint --ext .ts --ext .tsx src"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.32",
+    "@types/react-responsive": "^8.0.2",
+    "@types/styled-components": "^5.1.0",
+    "framer-motion": "^1.11.0",
+    "html-react-parser": "^0.13.0",
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-double-marquee": "^1.0.5",
+    "react-responsive": "^8.1.0",
+    "scroller-motion": "0.0.1-beta.3",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@types/he": "^1.1.1",
+    "@types/node": "^13.11.0",
+    "@types/wpapi": "^1.1.0",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "he": "^1.2.0",
+    "husky": "^4.2.3",
+    "prettier": "2.0.5",
+    "pretty-quick": "^2.0.1",
+    "typescript": "^3.9.5",
+    "wpapi": "^1.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
